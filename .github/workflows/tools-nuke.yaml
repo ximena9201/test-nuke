@@ -1,15 +1,15 @@
 name: Nuke
 on:
-  # schedule:
-  #   - cron: '0 10 * * 0'
+  schedule:
+    - cron: '0 10 * * 0'
   push:
-    branches:
-      - main
+  #   branches:
+  #     - main
   #   types: [ opened, edited, reopened, synchronize ]
     paths:
       - 'scripts/**'
-      - '.github/workflows/tools-nuke.yaml'
-  # workflow_dispatch:
+      - '.github/workflows/nuke.yaml'
+  workflow_dispatch:
 env:
   AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
   AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
