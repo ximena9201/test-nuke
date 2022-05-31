@@ -41,5 +41,5 @@ jobs:
       - name: Nuke
         run: |
           echo "BEGIN: Nuke"
-          bash scripts/nuke.sh
-          echo "END: Nuke"
+          # bash scripts/nuke.sh
+          # echo "END: Nuke"
