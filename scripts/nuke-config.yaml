@@ -1,0 +1,41 @@
+---
+regions:
+  - "us-east-1"
+
+account-blocklist:
+  - "<account number>" # performance-hub-preproduction
+  - "<account number>" # performance-hub-production
+  - "<account number>" # xhibit-portal-preproduction
+  - "<account number>" # xhibit-portal-production
+
+resource-types:
+  # don't nuke IAM users
+  excludes:
+    - GuardDutyDetector
+    - IAMGroup
+    - IAMGroupPolicy
+    - IAMGroupPolicyAttachment
+    - IAMInstanceProfile
+    - IAMInstanceProfileRole
+    - IAMLoginProfile
+    - IAMOpenIDConnectProvider
+    - IAMPolicy
+    - IAMRole
+    - IAMRolePolicy
+    - IAMRolePolicyAttachment
+    - IAMSAMLProvider
+    - IAMServerCertificate
+    - IAMServiceSpecificCredential
+    - IAMSigningCertificate
+    - IAMUser
+    - IAMUserAccessKey
+    - IAMUserGroupAttachment
+    - IAMUserPolicy
+    - IAMUserPolicyAttachment
+    - IAMUserSSHPublicKey
+    - IAMVirtualMFADevice
+
+accounts:
+  "<account number>": # cooker-development
+    presets:
+      - "common"
