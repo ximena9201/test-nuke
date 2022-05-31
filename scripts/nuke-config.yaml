@@ -36,6 +36,6 @@ resource-types:
     - IAMVirtualMFADevice
 
 accounts:
-  "<account number>": # cooker-development
-    presets:
-      - "common"
+  "795134161157": # cooker-development
+    # presets:
+    #   - "common"
