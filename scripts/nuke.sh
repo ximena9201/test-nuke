@@ -10,7 +10,7 @@
 #      }
 #    }'
 # Export the account IDs to env variables, for example: export SPRINKLER_DEVELOPMENT_ACCID=111111111111
-eval "$(jq -r '.NUKE_ACCOUNT_IDS | to_entries | .[] |"export " + .key + "=" + (.value | @sh)' <<<"$NUKE_ACCOUNT_IDS")"
+# eval "$(jq -r '.NUKE_ACCOUNT_IDS | to_entries | .[] |"export " + .key + "=" + (.value | @sh)' <<<"$NUKE_ACCOUNT_IDS")"
 
 # Generate nuke-config.yml interpolating env variables with account IDs.
 # cat ./scripts/nuke-config-template.txt | envsubst >nuke-config.yml
@@ -37,7 +37,7 @@ export AWS_REGION=us-east-1
 #           acc_id_var_name="${dir_name_upper_case}_DEVELOPMENT_ACCID"
 #           acc_id=${!acc_id_var_name} # Evaluate the variable name stored in acc_id_var_name
 
-  eval $(aws sts assume-role --role-arn "arn:aws:iam::795134161157:role/MemberInfrastructureAccess" --role-session-name "xime_DEVELOPMENT_ACCID_SESSION" | jq -r '.Credentials | "export AWS_ACCESS_KEY_ID=\(.AccessKeyId)\nexport AWS_SECRET_ACCESS_KEY=\(.SecretAccessKey)\nexport AWS_SESSION_TOKEN=\(.SessionToken)\n"')
+  # eval $(aws sts assume-role --role-arn "arn:aws:iam::795134161157:role/MemberInfrastructureAccess" --role-session-name "xime_DEVELOPMENT_ACCID_SESSION" | jq -r '.Credentials | "export AWS_ACCESS_KEY_ID=\(.AccessKeyId)\nexport AWS_SECRET_ACCESS_KEY=\(.SecretAccessKey)\nexport AWS_SESSION_TOKEN=\(.SessionToken)\n"')
 
   $HOME/bin/aws-nuke --access-key-id "$AWS_ACCESS_KEY_ID" \
     --secret-access-key "$AWS_SECRET_ACCESS_KEY" \
