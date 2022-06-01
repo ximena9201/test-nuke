@@ -10,10 +10,10 @@
 #      }
 #    }'
 # Export the account IDs to env variables, for example: export SPRINKLER_DEVELOPMENT_ACCID=111111111111
-# eval "$(jq -r '.NUKE_ACCOUNT_IDS | to_entries | .[] |"export " + .key + "=" + (.value | @sh)' <<<"$NUKE_ACCOUNT_IDS")"
+eval "$(jq -r '.NUKE_ACCOUNT_IDS | to_entries | .[] |"export " + .key + "=" + (.value | @sh)' <<<"$NUKE_ACCOUNT_IDS")"
 
 # Generate nuke-config.yml interpolating env variables with account IDs.
-# cat ./scripts/nuke-config-template.txt | envsubst >nuke-config.yml
+cat ./scripts/nuke-config-template.txt | envsubst >nuke-config.yml
 
 export AWS_REGION=us-east-1
 

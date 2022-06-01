@@ -1,0 +1,53 @@
+---
+regions:
+  - "us-east-1""
+
+account-blocklist:
+  - "$PERFORMANCE_HUB_PREPRODUCTION_ACCID" # PERFORMANCE_HUB_PREPRODUCTION_ACCID
+  - "$PERFORMANCE_HUB_PRODUCTION_ACCID" # PERFORMANCE_HUB_PRODUCTION_ACCID
+  - "$XHIBIT_PORTAL_PREPRODUCTION_ACCID" # XHIBIT_PORTAL_PREPRODUCTION_ACCID
+  - "$XHIBIT_PORTAL_PRODUCTION_ACCID" # XHIBIT_PORTAL_PRODUCTION_ACCID
+
+resource-types:
+  # don't nuke IAM users
+  excludes:
+    - ACMCertificate
+    - EC2DHCPOption
+    - EC2InternetGateway
+    - EC2InternetGatewayAttachment
+    - EC2NetworkACL
+    - EC2RouteTable
+    - EC2Subnet
+    - EC2VPC
+    - GuardDutyDetector
+    - IAMGroup
+    - IAMGroupPolicy
+    - IAMGroupPolicyAttachment
+    - IAMInstanceProfile
+    - IAMInstanceProfileRole
+    - IAMLoginProfile
+    - IAMOpenIDConnectProvider
+    - IAMPolicy
+    - IAMRole
+    - IAMRolePolicy
+    - IAMRolePolicyAttachment
+    - IAMSAMLProvider
+    - IAMServerCertificate
+    - IAMServiceSpecificCredential
+    - IAMSigningCertificate
+    - IAMUser
+    - IAMUserAccessKey
+    - IAMUserGroupAttachment
+    - IAMUserPolicy
+    - IAMUserPolicyAttachment
+    - IAMUserSSHPublicKey
+    - IAMVirtualMFADevice
+    - S3AccessPoint
+    - S3Bucket
+    - S3MultipartUpload
+    - S3Object
+    - SecurityHub
+    - WAFv2WebACL
+
+accounts:
+  "$NUKE_ACCOUNT_IDS": # COOKER_DEVELOPMENT_ACCID
