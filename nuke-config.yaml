@@ -36,7 +36,7 @@ resource-types:
     - IAMVirtualMFADevice
 
 accounts:
-  "658238644878": # cooker-development
+  "795134161157": # ximeaws
 #  "658238644878":
     # presets:
     #   - "common"
